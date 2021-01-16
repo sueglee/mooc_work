@@ -3,22 +3,21 @@
 using namespace std;
 
 int main() {
-    int n,a,b,c,d;
-    cout<<"please enter n which <=100\n";
-    cin>>n;
-    if(n<=100)
+    int p,e,i,d,k=21252;
+    cin>>p>>e>>i>>d;
+    for(k=d+1; k<21252+1; k++)
     {
-        for(a=2; a<n;a++)
+        if((k-p)%23==0)
         {
-            for(b=2; b<a; b++)
+            for(; k<21252+1; k+=23)
             {
-                for(c=b; c<a; c++)
+                if((k-e)%28==0)
                 {
-                    for(d=c; d<a; d++)
+                    for(; k<21252+1; k+=23*28)
                     {
-                        if(a*a*a==b*b*b+c*c*c+d*d*d)
+                        if((k-i)%33==0)
                         {
-                            cout<<"Cube="<<a<<",Triple=("<<b<<","<<c<<","<<d<<")\n";
+                            cout<<k-d;
                         }
                     }
                 }
@@ -27,3 +26,14 @@ int main() {
     }
     return 0;
 }
+/*
+int p,e,i,d,caseno = 0;
+while(cin>>p>>e>>i>>d&&p!=-1)
+{
+    ++caseno;
+    int k;
+    for(k = d+1; (k-d)%23; ++k);
+    for(; (k-e)%28; K+=23);
+    for(; (k-i)%33; K+=23*28);
+    cout<<k-d;
+}*/
